@@ -62,12 +62,15 @@ function liri(option, arg) {
 
 function help() {
     var helpMsg = "\nUsage: node liri.js [options] [arguments]\n\n" +
-        "options\t\t\t arguments\n" +
-        "my-tweets\t\t <number of tweets to load>\n" +
-        "spotify-this-song\t <songs name>\n";
+        "options\t\t\t arguments\t\t\t description\n" +
+        "my-tweets\t\t <OPTIONAL: number of tweets>\t Loads last 20 tweets from your twitter if optional arg is not setup.\n" +
+        "spotify-this-song\t <songs name>\t\t\t Shows songs description from spotify and plays a preview version in browser for the song that was searched. \n" +
+        "movie-this\t\t <movie name>\t\t\t Shows description of the movie that was searched. \n" +
+        "do-what-it-says\t\t <no arg needed> \t\t Runs commands from random.txt file in sequence (*new command on new line).\n";
     console.log(helpMsg);
 }
 
 
+help();
 //start the app
 liri(option, arg);
