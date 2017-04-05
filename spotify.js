@@ -1,4 +1,5 @@
 var spotify = require('spotify');
+var openurl = require('openurl');
 
 exports.getSongsInfo = function(songName) {
     spotify.search({ type: 'track', query: songName }, function(err, data) {
@@ -8,6 +9,7 @@ exports.getSongsInfo = function(songName) {
         }
         var record = data['tracks']['items'][0];
         console.log("Preview link of the song: ", record['preview_url']);
+        openurl.open(record['preview_url']);
         console.log("Song's name: ", record['name']);
         console.log("Album name: ", record['album']['name']);
         if (record['artists'].length <= 1) {

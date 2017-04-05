@@ -1,12 +1,13 @@
 var twitter = require('./twitter.js');
 var spotify = require('./spotify.js');
+var movie = require('./imdb.js');
 
 const MY_TWITTER_NAME = "_rutulpatel";
 
 var inputArr = process.argv.splice(2);
 
 var option = inputArr[0];
-var arg = inputArr[1];
+var arg = inputArr.splice(1);
 
 switch (option) {
     case 'my-tweets':
@@ -14,10 +15,18 @@ switch (option) {
         break;
 
     case 'spotify-this-song':
-        if (arg) {
+        if (arg.length > 0) {
             spotify.getSongsInfo(arg);
         } else {
-            console.log("USAGE: You need to enter a song name. Syntax: spotify-this-song <song-name>");
+            console.log("USAGE: You need to enter song name. Syntax: spotify-this-song <song-name>");
+        }
+        break;
+
+    case 'movie-this':
+        if (arg.length > 0) {
+            movie.getMovies(arg);
+        } else {
+            console.log("USAGE: You need to enter movie name. Syntax: movie-this <movie-name>");
         }
         break;
 

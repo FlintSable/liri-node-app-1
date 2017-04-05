@@ -12,7 +12,7 @@ exports.getMovies = function(title) {
         movie = JSON.parse(movie);
         // console.log(movie);
         if (movie.Response.toLowerCase() === 'false') {
-            return console.log('No movies were found!');
+            return console.log('No movies were found with name: ' + title + "!");
         } else {
             var tomatoRatings;
             for (var i = 0; i < movie.Ratings.length; i++) {
@@ -20,7 +20,7 @@ exports.getMovies = function(title) {
                     tomatoRatings = movie.Ratings[i]["Value"];
                 }
             }
-            var output = "Title: " + movie.Title + "\n" +
+            var output = "\nTitle: " + movie.Title + "\n" +
                 "Year: " + movie.Year + "\n" +
                 "IMDB Rating: " + movie.imdbRating + "\n" +
                 "Country it was produced in: " + movie.Country + "\n" +
@@ -44,5 +44,3 @@ exports.getMovies = function(title) {
          */
     });
 }
-
-exports.getMovies('horrible bosses 2');
