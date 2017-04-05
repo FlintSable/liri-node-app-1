@@ -54,7 +54,7 @@ function liri(option, arg) {
             if (arg) {
                 console.log("I see what you did, but we dont have that functionality added yet...");
             } else {
-                console.log("Jeez dude, you dont know how to use me, pass '--help' parameter to see what i can do.");
+                console.log("Type '--help' argument to see what i can do.");
             }
             break;
     }
