@@ -4,9 +4,7 @@ var movie = require('./imdb.js');
 var fs = require('fs');
 
 const MY_TWITTER_NAME = "_rutulpatel";
-
 var inputArr = process.argv.splice(2);
-
 var option = inputArr[0];
 var arg = inputArr.splice(1).join(" ");
 
@@ -70,7 +68,5 @@ function help() {
     console.log(helpMsg);
 }
 
-
-help();
 //start the app
 liri(option, arg);

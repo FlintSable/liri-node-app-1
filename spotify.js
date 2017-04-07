@@ -1,6 +1,5 @@
 var spotify = require('spotify');
 var openurl = require('openurl');
-
 exports.getSongsInfo = function(songName) {
     spotify.search({ type: 'track', query: songName }, function(err, data) {
         if (err) {

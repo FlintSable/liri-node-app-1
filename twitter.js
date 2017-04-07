@@ -1,8 +1,6 @@
 var keys = require('./keys.js');
 var twitter = require('twitter');
-
 var client = new twitter(keys.twitterKeys);
-
 exports.getTweets = function(userName, tweetCount) {
     tweetCount = tweetCount || 20;
     console.log("making twitter api call");
@@ -11,7 +9,5 @@ exports.getTweets = function(userName, tweetCount) {
         tweets.forEach(function(tweet) {
             console.log('tweet', tweet.text);
         });
-        // console.log('tweet', tweets);
-        // console.log('response', response);
     });
 }
