@@ -1,31 +1,31 @@
 {
-  "name": "liri-node-app",
-  "version": "1.0.0",
-  "description": "LiRi (Language Interpretation and Recognition Interface) in node.js, just like apple Siri...",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rutulpatel/liri-node-app.git"
-  },
-  "keywords": [
-    "node.js",
-    "liri"
-  ],
-  "author": "Rutul Patel",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/rutulpatel/liri-node-app/issues"
-  },
-  "homepage": "https://github.com/rutulpatel/liri-node-app#readme",
-  "dependencies": {
-    "fs": "0.0.1-security",
-    "new-logger": "^1.0.2",
-    "openurl": "^1.1.1",
-    "request": "^2.81.0",
-    "spotify": "^0.3.0",
-    "twitter": "^1.7.0"
-  }
+    "name": "liri-node-app",
+    "version": "1.0.0",
+    "description": "LiRi (Language Interpretation and Recognition Interface) in node.js, just like apple Siri...",
+    "main": "liri.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rutulpatel/liri-node-app.git"
+    },
+    "keywords": [
+        "node.js",
+        "liri"
+    ],
+    "author": "Rutul Patel",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/rutulpatel/liri-node-app/issues"
+    },
+    "homepage": "https://github.com/rutulpatel/liri-node-app#readme",
+    "dependencies": {
+        "fs": "0.0.1-security",
+        "new-logger": "^1.0.2",
+        "openurl": "^1.1.1",
+        "request": "^2.81.0",
+        "spotify": "^0.3.0",
+        "twitter": "^1.7.0"
+    }
 }
