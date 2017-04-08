@@ -1,12 +1,15 @@
 var twitter = require('./twitter.js');
+var logger = require('./logger.js');
 var spotify = require('./spotify.js');
 var movie = require('./imdb.js');
 var fs = require('fs');
 
 const MY_TWITTER_NAME = "_rutulpatel";
 var inputArr = process.argv.splice(2);
+logger.log(inputArr.join(" "), 1);
 var option = inputArr[0];
 var arg = inputArr.splice(1).join(" ");
+
 
 function liri(option, arg) {
     switch (option) {
@@ -18,7 +21,7 @@ function liri(option, arg) {
             if (arg) {
                 spotify.getSongsInfo(arg);
             } else {
-                console.log("USAGE: You need to enter song name. Syntax: spotify-this-song <song-name>");
+                logger.log("USAGE: You need to enter song name. Syntax: spotify-this-song <song-name>");
             }
             break;
 
@@ -26,14 +29,14 @@ function liri(option, arg) {
             if (arg) {
                 movie.getMovies(arg);
             } else {
-                console.log("USAGE: You need to enter movie name. Syntax: movie-this <movie-name>");
+                logger.log("USAGE: You need to enter movie name. Syntax: movie-this <movie-name>");
             }
             break;
 
         case 'do-what-it-says':
             fs.readFile('random.txt', 'utf8', function(err, data) {
                 if (err) {
-                    console.log(err);
+                    logger.log(err);
                 } else {
                     var commandsArr = data.split("\n");
                     commandsArr.forEach(function(command) {
@@ -50,9 +53,9 @@ function liri(option, arg) {
 
         default:
             if (arg) {
-                console.log("I see what you did, but we dont have that functionality added yet...");
+                logger.log("I see what you did, but we dont have that functionality added yet...");
             } else {
-                console.log("Type '--help' argument to see what i can do.");
+                logger.log("Type '--help' argument to see what i can do.");
             }
             break;
     }

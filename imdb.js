@@ -1,13 +1,14 @@
 var request = require('request');
+var logger = require('./logger.js');
 exports.getMovies = function(title) {
     imdburl = "http://www.omdbapi.com/?t=" + title + "&plot=full";
     request.get(imdburl, function(err, response, movie) {
         if (err) {
-            return console.error(err);
+            return logger.error(err);
         }
         movie = JSON.parse(movie);
         if (movie.Response.toLowerCase() === 'false') {
-            return console.log('No movies were found with name: ' + title + "!");
+            return logger.log('No movies were found with name: ' + title + "!");
         } else {
             var tomatoRatings;
             for (var i = 0; i < movie.Ratings.length; i++) {
@@ -23,7 +24,7 @@ exports.getMovies = function(title) {
                 "Plot: " + movie.Plot + "\n" +
                 "Actors: " + movie.Actors + "\n" +
                 "Rotten Tomato Ratings: " + tomatoRatings + "\n";
-            console.log(output);
+            logger.log(output);
         }
     });
 }

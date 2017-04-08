@@ -1,13 +1,14 @@
 var keys = require('./keys.js');
+var logger = require('./logger.js');
 var twitter = require('twitter');
 var client = new twitter(keys.twitterKeys);
 exports.getTweets = function(userName, tweetCount) {
     tweetCount = tweetCount || 20;
-    console.log("making twitter api call");
+    logger.log("making twitter api call");
     client.get('statuses/user_timeline', { screen_name: userName, count: tweetCount }, function(error, tweets, response) {
-        error && console.log('error', error);
+        error && logger.log('error: ' + error);
         tweets.forEach(function(tweet) {
-            console.log('tweet', tweet.text);
+            logger.log(tweet.text);
         });
     });
 }
